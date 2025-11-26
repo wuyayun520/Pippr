@@ -6,6 +6,7 @@ import '../services/follow_service.dart';
 import '../services/block_service.dart';
 import '../theme/app_theme.dart';
 import 'pippr_chat_screen.dart';
+import 'fullscreen_video_screen.dart';
 
 class UserDetailScreen extends StatefulWidget {
   final TalentModel talent;
@@ -678,53 +679,67 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
   }
 
   Widget _buildPostItem(DynamicModel dynamic) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.asset(
-              dynamic.videoCover,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[800],
-                  child: const Icon(
-                    Icons.image,
-                    color: Colors.white54,
-                    size: 48,
-                  ),
-                );
-              },
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => FullscreenVideoScreen(
+              videoPath: dynamic.video,
+              videoCover: dynamic.videoCover,
+              userName: widget.talent.name,
+              userAvatar: widget.talent.avatar,
             ),
-            // 播放按钮
-            Center(
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.play_arrow,
-                  color: Colors.white,
-                  size: 30,
-                ),
-              ),
+          ),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
             ),
           ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                dynamic.videoCover,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[800],
+                    child: const Icon(
+                      Icons.image,
+                      color: Colors.white54,
+                      size: 48,
+                    ),
+                  );
+                },
+              ),
+              // 播放按钮
+              Center(
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.play_arrow,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
