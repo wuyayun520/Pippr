@@ -7,9 +7,18 @@ class TalentService {
     try {
       final String jsonString =
           await rootBundle.loadString('assets/AxisBandModel/talents_data.json');
-      final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> talentsJson = jsonData['talents'] ?? [];
-      return talentsJson.map((e) => TalentModel.fromJson(e)).toList();
+      final dynamic jsonData = json.decode(jsonString);
+      
+      List<dynamic> talentsJson;
+      if (jsonData is List) {
+        talentsJson = jsonData;
+      } else if (jsonData is Map<String, dynamic>) {
+        talentsJson = jsonData['talents'] ?? [];
+      } else {
+        return [];
+      }
+      
+      return talentsJson.map((e) => TalentModel.fromJson(e as Map<String, dynamic>)).toList();
     } catch (e) {
       print('Error loading talents: $e');
       return [];

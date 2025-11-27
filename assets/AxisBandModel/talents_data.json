@@ -1,365 +1,364 @@
-{
-  "talents": [
-    {
-      "id": "pippr002",
-      "name": "Marcus Johnson",
-      "avatar": "assets/AxisBandModel/pippr002/user.webp",
-      "background": "assets/AxisBandModel/pippr002/userbg.webp",
-      "talentType": "Dancing",
-      "description": "Hip-hop and contemporary dance performer with 10 years of experience",
-      "followers": 198,
-      "likes": 120,
-      "dynamics": [
-        {
-          "id": "dyn_002_1",
-          "content": "New choreography dropped! This one took weeks to perfect 💃",
-          "likes": 678,
-          "video": "assets/AxisBandModel/pippr002/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr002/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr003",
-      "name": "Sophia Martinez",
-      "avatar": "assets/AxisBandModel/pippr003/user.webp",
-      "background": "assets/AxisBandModel/pippr003/userbg.webp",
-      "talentType": "Piano",
-      "description": "Classical and jazz pianist, concert performer",
-      "followers": 156,
-      "likes": 95,
-      "dynamics": [
-        {
-          "id": "dyn_003_1",
-          "content": "Playing Chopin's Nocturne in E-flat major. One of my favorites 🎹",
-          "likes": 456,
-          "video": "assets/AxisBandModel/pippr003/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr003/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr004",
-      "name": "James Wilson",
-      "avatar": "assets/AxisBandModel/pippr004/user.webp",
-      "background": "assets/AxisBandModel/pippr004/userbg.webp",
-      "talentType": "Guitar",
-      "description": "Acoustic and electric guitarist, specializes in rock and blues",
-      "followers": 178,
-      "likes": 110,
-      "dynamics": [
-        {
-          "id": "dyn_004_1",
-          "content": "New original composition! This one's been brewing in my head for months 🎸",
-          "likes": 523,
-          "video": "assets/AxisBandModel/pippr004/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr004/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr005",
-      "name": "Isabella Chen",
-      "avatar": "assets/AxisBandModel/pippr005/user.webp",
-      "background": "assets/AxisBandModel/pippr005/userbg.webp",
-      "talentType": "Violin",
-      "description": "Orchestral violinist and solo performer",
-      "followers": 142,
-      "likes": 87,
-      "dynamics": [
-        {
-          "id": "dyn_005_1",
-          "content": "Performing Vivaldi's Four Seasons. Spring movement is my favorite 🌸",
-          "likes": 412,
-          "video": "assets/AxisBandModel/pippr005/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr005/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr006",
-      "name": "Alexander Brown",
-      "avatar": "assets/AxisBandModel/pippr006/user.webp",
-      "background": "assets/AxisBandModel/pippr006/userbg.webp",
-      "talentType": "Drums",
-      "description": "Professional drummer, rock and jazz fusion specialist",
-      "followers": 165,
-      "likes": 98,
-      "dynamics": [
-        {
-          "id": "dyn_006_1",
-          "content": "New drum solo! The rhythm never stops 🥁",
-          "likes": 478,
-          "video": "assets/AxisBandModel/pippr006/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr006/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr007",
-      "name": "Olivia Davis",
-      "avatar": "assets/AxisBandModel/pippr007/user.webp",
-      "background": "assets/AxisBandModel/pippr007/userbg.webp",
-      "talentType": "Saxophone",
-      "description": "Jazz saxophonist, smooth jazz and bebop performer",
-      "followers": 134,
-      "likes": 82,
-      "dynamics": [
-        {
-          "id": "dyn_007_1",
-          "content": "Late night jazz session. The saxophone speaks to my soul 🎷",
-          "likes": 389,
-          "video": "assets/AxisBandModel/pippr007/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr007/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr008",
-      "name": "Lucas Anderson",
-      "avatar": "assets/AxisBandModel/pippr008/user.webp",
-      "background": "assets/AxisBandModel/pippr008/userbg.webp",
-      "talentType": "Magic",
-      "description": "Professional magician, close-up and stage magic specialist",
-      "followers": 189,
-      "likes": 130,
-      "dynamics": [
-        {
-          "id": "dyn_008_1",
-          "content": "New magic trick reveal! Can you figure out how it's done? ✨",
-          "likes": 612,
-          "video": "assets/AxisBandModel/pippr008/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr008/talentpic.webp" 
-        }
-      ]
-    },
-    {
-      "id": "pippr009",
-      "name": "Mia Rodriguez",
-      "avatar": "assets/AxisBandModel/pippr009/user.webp",
-      "background": "assets/AxisBandModel/pippr009/userbg.webp",
-      "talentType": "Ballet",
-      "description": "Classical ballet dancer, principal dancer with 15 years experience",
-      "followers": 172,
-      "likes": 105,
-      "dynamics": [
-        {
-          "id": "dyn_009_1",
-          "content": "Swan Lake rehearsal. Every movement tells a story 🩰",
-          "likes": 534,
-          "video": "assets/AxisBandModel/pippr009/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr009/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr010",
-      "name": "Noah Taylor",
-      "avatar": "assets/AxisBandModel/pippr010/user.webp",
-      "background": "assets/AxisBandModel/pippr010/userbg.webp",
-      "talentType": "Rap",
-      "description": "Hip-hop artist and freestyle rapper",
-      "followers": 201,
-      "likes": 145,
-      "dynamics": [
-        {
-          "id": "dyn_010_1",
-          "content": "New freestyle! Dropping bars on the spot 🎤",
-          "likes": 678,
-          "video": "assets/AxisBandModel/pippr010/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr010/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr011",
-      "name": "Ava White",
-      "avatar": "assets/AxisBandModel/pippr011/user.webp",
-      "background": "assets/AxisBandModel/pippr011/userbg.webp",
-      "talentType": "Cello",
-      "description": "Classical cellist, chamber music and solo performer",
-      "followers": 148,
-      "likes": 91,
-      "dynamics": [
-        {
-          "id": "dyn_011_1",
-          "content": "Playing Bach's Cello Suite No. 1. The depth of this piece is incredible 🎻",
-          "likes": 412,
-          "video": "assets/AxisBandModel/pippr011/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr011/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr012",
-      "name": "Ethan Moore",
-      "avatar": "assets/AxisBandModel/pippr012/user.webp",
-      "background": "assets/AxisBandModel/pippr012/userbg.webp",
-      "talentType": "Beatboxing",
-      "description": "Professional beatboxer, world championship competitor",
-      "followers": 167,
-      "likes": 102,
-      "dynamics": [
-        {
-          "id": "dyn_012_1",
-          "content": "New beatbox routine! Creating music with just my voice 🎤",
-          "likes": 534,
-          "video": "assets/AxisBandModel/pippr012/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr012/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr013",
-      "name": "Charlotte Lee",
-      "avatar": "assets/AxisBandModel/pippr013/user.webp",
-      "background": "assets/AxisBandModel/pippr013/userbg.webp",
-      "talentType": "Flute",
-      "description": "Classical and contemporary flutist, orchestral musician",
-      "followers": 139,
-      "likes": 86,
-      "dynamics": [
-        {
-          "id": "dyn_013_1",
-          "content": "Playing Debussy's Syrinx. The flute's ethereal sound is mesmerizing 🎵",
-          "likes": 367,
-          "video": "assets/AxisBandModel/pippr013/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr013/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr014",
-      "name": "Benjamin Garcia",
-      "avatar": "assets/AxisBandModel/pippr014/user.webp",
-      "background": "assets/AxisBandModel/pippr014/userbg.webp",
-      "talentType": "Acrobatics",
-      "description": "Professional acrobat, circus performer and stunt artist",
-      "followers": 195,
-      "likes": 125,
-      "dynamics": [
-        {
-          "id": "dyn_014_1",
-          "content": "New acrobatic routine! Pushing the boundaries of what's possible 🤸",
-          "likes": 6120,
-          "video": "assets/AxisBandModel/pippr014/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr014/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr015",
-      "name": "Amelia King",
-      "avatar": "assets/AxisBandModel/pippr015/user.webp",
-      "background": "assets/AxisBandModel/pippr015/userbg.webp",
-      "talentType": "Opera",
-      "description": "Operatic soprano, performs in major opera houses worldwide",
-      "followers": 163,
-      "likes": 99,
-      "dynamics": [
-        {
-          "id": "dyn_015_1",
-          "content": "Performing 'O mio babbino caro' from Gianni Schicchi. One of opera's most beautiful arias 🎭",
-          "likes": 445,
-          "video": "assets/AxisBandModel/pippr015/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr015/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr016",
-      "name": "Henry Scott",
-      "avatar": "assets/AxisBandModel/pippr016/user.webp",
-      "background": "assets/AxisBandModel/pippr016/userbg.webp",
-      "talentType": "Comedy",
-      "description": "Stand-up comedian and improvisational performer",
-      "followers": 207,
-      "likes": 150,
-      "dynamics": [
-        {
-          "id": "dyn_016_1",
-          "content": "New comedy routine! Laughter is the best medicine 😂",
-          "likes": 723,
-          "video": "assets/AxisBandModel/pippr016/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr016/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr017",
-      "name": "Lily Green",
-      "avatar": "assets/AxisBandModel/pippr017/user.webp",
-      "background": "assets/AxisBandModel/pippr017/userbg.webp",
-      "talentType": "Harp",
-      "description": "Classical harpist, angelic and ethereal sound specialist",
-      "followers": 151,
-      "likes": 93,
-      "dynamics": [
-        {
-          "id": "dyn_017_1",
-          "content": "Playing 'Clair de Lune' on the harp. The most heavenly sound 🎵",
-          "likes": 423,
-          "video": "assets/AxisBandModel/pippr017/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr017/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr018",
-      "name": "Daniel Park",
-      "avatar": "assets/AxisBandModel/pippr018/user.webp",
-      "background": "assets/AxisBandModel/pippr018/userbg.webp",
-      "talentType": "DJ",
-      "description": "Electronic music DJ and producer, EDM specialist",
-      "followers": 223,
-      "likes": 168,
-      "dynamics": [
-        {
-          "id": "dyn_018_1",
-          "content": "New mix dropped! Turn up the volume and feel the beat 🎧",
-          "likes": 812,
-          "video": "assets/AxisBandModel/pippr018/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr018/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr019",
-      "name": "Grace Murphy",
-      "avatar": "assets/AxisBandModel/pippr019/user.webp",
-      "background": "assets/AxisBandModel/pippr019/userbg.webp",
-      "talentType": "Ukulele",
-      "description": "Ukulele performer, Hawaiian and contemporary styles",
-      "followers": 144,
-      "likes": 89,
-      "dynamics": [
-        {
-          "id": "dyn_019_1",
-          "content": "Playing some Hawaiian tunes on the ukulele. Aloha vibes! 🌺",
-          "likes": 378,
-          "video": "assets/AxisBandModel/pippr019/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr019/talentpic.webp"
-        }
-      ]
-    },
-    {
-      "id": "pippr020",
-      "name": "Samuel Wright",
-      "avatar": "assets/AxisBandModel/pippr020/user.webp",
-      "background": "assets/AxisBandModel/pippr020/userbg.webp",
-      "talentType": "Beat Making",
-      "description": "Music producer and beat maker, hip-hop and trap specialist",
-      "followers": 186,
-      "likes": 118,
-      "dynamics": [
-        {
-          "id": "dyn_020_1",
-          "content": "New beat just dropped! This one's going to be a hit 🎹",
-          "likes": 645,
-          "video": "assets/AxisBandModel/pippr020/talent.mp4",
-          "videoCover": "assets/AxisBandModel/pippr020/talentpic.webp"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "pippr001",
+    "name": "Emma Thompson",
+    "avatar": "assets/AxisBandModel/pippr001/user.webp",
+    "background": "assets/AxisBandModel/pippr001/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Contemporary and jazz dance performer with 8 years of professional experience",
+    "followers": 245,
+    "likes": 189,
+    "dynamics": [
+      {
+        "id": "dyn_001_1",
+        "content": "New contemporary piece! Expressing emotions through movement 💃",
+        "likes": 892,
+        "video": "assets/AxisBandModel/pippr001/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr001/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr002",
+    "name": "Maya Johnson",
+    "avatar": "assets/AxisBandModel/pippr002/user.webp",
+    "background": "assets/AxisBandModel/pippr002/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Hip-hop and street dance performer with 10 years of experience",
+    "followers": 198,
+    "likes": 120,
+    "dynamics": [
+      {
+        "id": "dyn_002_1",
+        "content": "New choreography dropped! This one took weeks to perfect 💃",
+        "likes": 678,
+        "video": "assets/AxisBandModel/pippr002/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr002/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr003",
+    "name": "Sophie Martinez",
+    "avatar": "assets/AxisBandModel/pippr003/user.webp",
+    "background": "assets/AxisBandModel/pippr003/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Latin and ballroom dance specialist with 7 years of competitive experience",
+    "followers": 312,
+    "likes": 256,
+    "dynamics": [
+      {
+        "id": "dyn_003_1",
+        "content": "New salsa routine! The passion and rhythm of Latin dance 💃✨",
+        "likes": 1245,
+        "video": "assets/AxisBandModel/pippr003/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr003/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr004",
+    "name": "Jessica Wilson",
+    "avatar": "assets/AxisBandModel/pippr004/user.webp",
+    "background": "assets/AxisBandModel/pippr004/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Ballet and modern dance artist with 12 years of classical training",
+    "followers": 567,
+    "likes": 423,
+    "dynamics": [
+      {
+        "id": "dyn_004_1",
+        "content": "New ballet variation! The grace and precision of classical dance 💃",
+        "likes": 2103,
+        "video": "assets/AxisBandModel/pippr004/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr004/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr005",
+    "name": "Isabella Chen",
+    "avatar": "assets/AxisBandModel/pippr005/user.webp",
+    "background": "assets/AxisBandModel/pippr005/userbg.webp",
+    "talentType": "Dancing",
+    "description": "K-pop and urban dance performer with 6 years of experience",
+    "followers": 189,
+    "likes": 145,
+    "dynamics": [
+      {
+        "id": "dyn_005_1",
+        "content": "New K-pop dance cover! The energy and synchronization required 💃",
+        "likes": 1567,
+        "video": "assets/AxisBandModel/pippr005/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr005/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr006",
+    "name": "David Rodriguez",
+    "avatar": "assets/AxisBandModel/pippr006/user.webp",
+    "background": "assets/AxisBandModel/pippr006/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Breakdancing and street dance performer with 9 years of experience",
+    "followers": 423,
+    "likes": 378,
+    "dynamics": [
+      {
+        "id": "dyn_006_1",
+        "content": "New breakdance routine! The power moves and freezes are on point 🕺",
+        "likes": 2341,
+        "video": "assets/AxisBandModel/pippr006/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr006/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr007",
+    "name": "Oliver Brown",
+    "avatar": "assets/AxisBandModel/pippr007/user.webp",
+    "background": "assets/AxisBandModel/pippr007/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Popping and locking specialist with 8 years of street dance training",
+    "followers": 298,
+    "likes": 234,
+    "dynamics": [
+      {
+        "id": "dyn_007_1",
+        "content": "New popping routine! The isolations and hits are getting sharper 🕺",
+        "likes": 1876,
+        "video": "assets/AxisBandModel/pippr007/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr007/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr008",
+    "name": "Michael Anderson",
+    "avatar": "assets/AxisBandModel/pippr008/user.webp",
+    "background": "assets/AxisBandModel/pippr008/userbg.webp",
+    "talentType": "Dancing",
+    "description": "House dance and waacking performer with 7 years of experience",
+    "followers": 156,
+    "likes": 112,
+    "dynamics": [
+      {
+        "id": "dyn_008_1",
+        "content": "New house dance session! The footwork and grooves are smooth 🕺",
+        "likes": 945,
+        "video": "assets/AxisBandModel/pippr008/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr008/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr009",
+    "name": "Aiden Taylor",
+    "avatar": "assets/AxisBandModel/pippr009/user.webp",
+    "background": "assets/AxisBandModel/pippr009/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Krumping and aggressive style dancer with 6 years of experience",
+    "followers": 389,
+    "likes": 301,
+    "dynamics": [
+      {
+        "id": "dyn_009_1",
+        "content": "New krump session! The raw energy and intensity is everything 🕺",
+        "likes": 1678,
+        "video": "assets/AxisBandModel/pippr009/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr009/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr010",
+    "name": "Ryan Cooper",
+    "avatar": "assets/AxisBandModel/pippr010/user.webp",
+    "background": "assets/AxisBandModel/pippr010/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Tutting and finger tutting specialist with 5 years of experience",
+    "followers": 512,
+    "likes": 445,
+    "dynamics": [
+      {
+        "id": "dyn_010_1",
+        "content": "New tutting combo! The geometric patterns and angles are clean 🕺",
+        "likes": 2890,
+        "video": "assets/AxisBandModel/pippr010/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr010/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr011",
+    "name": "Liam Garcia",
+    "avatar": "assets/AxisBandModel/pippr011/user.webp",
+    "background": "assets/AxisBandModel/pippr011/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Voguing and ballroom dance performer with 8 years of experience",
+    "followers": 234,
+    "likes": 198,
+    "dynamics": [
+      {
+        "id": "dyn_011_1",
+        "content": "New vogue routine! The dips and spins are getting better 🕺",
+        "likes": 1234,
+        "video": "assets/AxisBandModel/pippr011/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr011/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr012",
+    "name": "Noah Lee",
+    "avatar": "assets/AxisBandModel/pippr012/user.webp",
+    "background": "assets/AxisBandModel/pippr012/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Tutting and animation style dancer with 7 years of experience",
+    "followers": 445,
+    "likes": 367,
+    "dynamics": [
+      {
+        "id": "dyn_012_1",
+        "content": "New animation combo! The robotic movements and flow are smooth 🕺",
+        "likes": 1987,
+        "video": "assets/AxisBandModel/pippr012/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr012/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr013",
+    "name": "Grayson Kim",
+    "avatar": "assets/AxisBandModel/pippr013/user.webp",
+    "background": "assets/AxisBandModel/pippr013/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Waving and liquid dance specialist with 6 years of experience",
+    "followers": 178,
+    "likes": 134,
+    "dynamics": [
+      {
+        "id": "dyn_013_1",
+        "content": "New waving combo! The fluid movements and transitions are smooth 🕺",
+        "likes": 876,
+        "video": "assets/AxisBandModel/pippr013/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr013/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr014",
+    "name": "Ethan White",
+    "avatar": "assets/AxisBandModel/pippr014/user.webp",
+    "background": "assets/AxisBandModel/pippr014/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Locking and funk dance performer with 9 years of experience",
+    "followers": 623,
+    "likes": 512,
+    "dynamics": [
+      {
+        "id": "dyn_014_1",
+        "content": "New locking routine! The funky moves and character are on point 🕺",
+        "likes": 3124,
+        "video": "assets/AxisBandModel/pippr014/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr014/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr015",
+    "name": "Mason Davis",
+    "avatar": "assets/AxisBandModel/pippr015/user.webp",
+    "background": "assets/AxisBandModel/pippr015/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Shuffling and cutting shapes dancer with 5 years of experience",
+    "followers": 267,
+    "likes": 201,
+    "dynamics": [
+      {
+        "id": "dyn_015_1",
+        "content": "New shuffle routine! The fast footwork and energy are incredible 🕺",
+        "likes": 1456,
+        "video": "assets/AxisBandModel/pippr015/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr015/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr016",
+    "name": "Lucas Moore",
+    "avatar": "assets/AxisBandModel/pippr016/user.webp",
+    "background": "assets/AxisBandModel/pippr016/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Tutting and gliding specialist with 8 years of experience",
+    "followers": 334,
+    "likes": 278,
+    "dynamics": [
+      {
+        "id": "dyn_016_1",
+        "content": "New tutting combo! The geometric precision and flow are clean 🕺",
+        "likes": 1789,
+        "video": "assets/AxisBandModel/pippr016/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr016/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr017",
+    "name": "Zachary Jackson",
+    "avatar": "assets/AxisBandModel/pippr017/user.webp",
+    "background": "assets/AxisBandModel/pippr017/userbg.webp",
+    "talentType": "Dancing",
+    "description": "B-boy and breakdancing performer with 10 years of experience",
+    "followers": 289,
+    "likes": 223,
+    "dynamics": [
+      {
+        "id": "dyn_017_1",
+        "content": "New b-boy routine! The power moves and freezes are getting stronger 🕺",
+        "likes": 2012,
+        "video": "assets/AxisBandModel/pippr017/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr017/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr018",
+    "name": "Alexander Scott",
+    "avatar": "assets/AxisBandModel/pippr018/user.webp",
+    "background": "assets/AxisBandModel/pippr018/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Popping and boogaloo dancer with 7 years of experience",
+    "followers": 198,
+    "likes": 156,
+    "dynamics": [
+      {
+        "id": "dyn_018_1",
+        "content": "New popping session! The hits and isolations are getting sharper 🕺",
+        "likes": 1123,
+        "video": "assets/AxisBandModel/pippr018/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr018/talentpic.webp"
+      }
+    ]
+  },
+  {
+    "id": "pippr019",
+    "name": "Christopher Adams",
+    "avatar": "assets/AxisBandModel/pippr019/user.webp",
+    "background": "assets/AxisBandModel/pippr019/userbg.webp",
+    "talentType": "Dancing",
+    "description": "Hip-hop and urban dance performer with 9 years of experience",
+    "followers": 356,
+    "likes": 289,
+    "dynamics": [
+      {
+        "id": "dyn_019_1",
+        "content": "New hip-hop routine! The grooves and style are on point 🕺",
+        "likes": 1654,
+        "video": "assets/AxisBandModel/pippr019/talent.mp4",
+        "videoCover": "assets/AxisBandModel/pippr019/talentpic.webp"
+      }
+    ]
+  }
+]
+
