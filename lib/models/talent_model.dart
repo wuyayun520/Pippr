@@ -44,14 +44,12 @@ class DynamicModel {
   final String content;
   final int likes;
   final String video;
-  final String videoCover;
 
   DynamicModel({
     required this.id,
     required this.content,
     required this.likes,
     required this.video,
-    required this.videoCover,
   });
 
   factory DynamicModel.fromJson(Map<String, dynamic> json) {
@@ -60,7 +58,6 @@ class DynamicModel {
       content: json['content'] ?? '',
       likes: json['likes'] ?? 0,
       video: json['video'] ?? '',
-      videoCover: json['videoCover'] ?? '',
     );
   }
 }

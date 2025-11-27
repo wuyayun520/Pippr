@@ -279,7 +279,6 @@ class _DynamicListScreenState extends State<DynamicListScreen> {
       children: [
         VideoPlayerWidget(
           videoPath: dynamic.video,
-          coverImagePath: dynamic.videoCover,
           autoPlay: isCurrentPage,
           onControllerReady: (controller) {
             if (mounted && controller != null) {

@@ -3,14 +3,12 @@ import 'package:video_player/video_player.dart';
 
 class FullscreenVideoScreen extends StatefulWidget {
   final String videoPath;
-  final String videoCover;
   final String userName;
   final String userAvatar;
 
   const FullscreenVideoScreen({
     super.key,
     required this.videoPath,
-    required this.videoCover,
     required this.userName,
     required this.userAvatar,
   });
@@ -137,67 +135,40 @@ class _FullscreenVideoScreenState extends State<FullscreenVideoScreen> {
   }
 
   Widget _buildErrorOrLoadingView() {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        Image.asset(
-          widget.videoCover,
-          fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return Container(
-              color: Colors.grey[900],
-              child: const Center(
-                child: Icon(
-                  Icons.image_not_supported,
-                  color: Colors.white54,
-                  size: 64,
-                ),
+    if (_hasError) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.error_outline,
+              color: Colors.white54,
+              size: 64,
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Failed to load video',
+              style: TextStyle(
+                color: Colors.white54,
+                fontSize: 16,
               ),
-            );
-          },
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Go Back'),
+            ),
+          ],
         ),
-        if (!_hasError)
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.5),
-                shape: BoxShape.circle,
-              ),
-              child: const CircularProgressIndicator(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        if (_hasError)
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.error_outline,
-                  color: Colors.white54,
-                  size: 64,
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Failed to load video',
-                  style: TextStyle(
-                    color: Colors.white54,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 24),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('Go Back'),
-                ),
-              ],
-            ),
-          ),
-      ],
+      );
+    }
+
+    return const Center(
+      child: CircularProgressIndicator(
+        color: Colors.white,
+      ),
     );
   }
 

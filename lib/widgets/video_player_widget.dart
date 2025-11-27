@@ -3,7 +3,6 @@ import 'package:video_player/video_player.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   final String videoPath;
-  final String coverImagePath;
   final bool autoPlay;
   final Function(VideoPlayerController?)? onControllerReady;
   final VoidCallback? onTap; // 点击回调
@@ -11,7 +10,6 @@ class VideoPlayerWidget extends StatefulWidget {
   const VideoPlayerWidget({
     super.key,
     required this.videoPath,
-    required this.coverImagePath,
     this.autoPlay = false,
     this.onControllerReady,
     this.onTap,
@@ -107,44 +105,36 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (_hasError || !_isInitialized) {
+    if (_hasError) {
       return GestureDetector(
         onTap: () {
           widget.onTap?.call();
         },
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.asset(
-              widget.coverImagePath,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[900],
-                  child: const Center(
-                    child: Icon(
-                      Icons.image_not_supported,
-                      color: Colors.white54,
-                      size: 64,
-                    ),
-                  ),
-                );
-              },
+        child: Container(
+          color: Colors.grey[900],
+          child: const Center(
+            child: Icon(
+              Icons.error_outline,
+              color: Colors.white54,
+              size: 64,
             ),
-            if (!_hasError)
-              Center(
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const CircularProgressIndicator(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-          ],
+          ),
+        ),
+      );
+    }
+
+    if (!_isInitialized) {
+      return GestureDetector(
+        onTap: () {
+          widget.onTap?.call();
+        },
+        child: Container(
+          color: Colors.black,
+          child: const Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          ),
         ),
       );
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/background_image_wrapper.dart';
+import '../widgets/video_thumbnail_widget.dart';
 import '../models/talent_model.dart';
 import '../services/talent_service.dart';
 import '../services/follow_service.dart';
@@ -685,7 +686,6 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
           MaterialPageRoute(
             builder: (context) => FullscreenVideoScreen(
               videoPath: dynamic.video,
-              videoCover: dynamic.videoCover,
               userName: widget.talent.name,
               userAvatar: widget.talent.avatar,
             ),
@@ -708,19 +708,18 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset(
-                dynamic.videoCover,
+              // 使用视频首帧作为封面
+              VideoThumbnailWidget(
+                videoPath: dynamic.video,
                 fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    color: Colors.grey[800],
-                    child: const Icon(
-                      Icons.image,
-                      color: Colors.white54,
-                      size: 48,
-                    ),
-                  );
-                },
+                errorWidget: Container(
+                  color: Colors.grey[800],
+                  child: const Icon(
+                    Icons.videocam_off,
+                    color: Colors.white54,
+                    size: 48,
+                  ),
+                ),
               ),
               // 播放按钮
               Center(
