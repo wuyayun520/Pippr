@@ -3,6 +3,9 @@ import 'dart:math';
 import '../models/talent_model.dart';
 import '../services/talent_service.dart';
 import '../services/block_service.dart';
+import '../services/vip_service.dart';
+import '../config/app_routes.dart';
+import '../theme/app_theme.dart';
 import 'user_detail_screen.dart';
 
 class TabTwoScreen extends StatefulWidget {
@@ -49,6 +52,116 @@ class _TabTwoScreenState extends State<TabTwoScreen>
   }
 
   Future<void> _loadTalentsAndMatch() async {
+    // 每次获取用户最新月订阅 VIP 状态
+    final isMonthlyVip = await VipService.isMonthlyVip();
+    
+    if (!isMonthlyVip) {
+      // 不是月订阅 VIP，提示用户并跳转到 VIP 订阅页面
+      final shouldSubscribe = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'Monthly VIP Required',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Talent matching is only available for Monthly VIP members.',
+                style: TextStyle(color: Colors.white70),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: AppTheme.primaryColor.withOpacity(0.3),
+                    width: 1,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'VIP Plans:',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Weekly: \$12.99/week',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Monthly: \$49.99/month',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Would you like to subscribe to Monthly VIP?',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                'Subscribe',
+                style: TextStyle(color: AppTheme.primaryColor),
+              ),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldSubscribe == true && mounted) {
+        Navigator.of(context).pushNamed(AppRoutes.vip);
+      }
+      return;
+    }
+
+    // 是月订阅 VIP，开始匹配
     final talents = await TalentService.loadTalents();
     final blockedList = await BlockService.getBlockedList();
 

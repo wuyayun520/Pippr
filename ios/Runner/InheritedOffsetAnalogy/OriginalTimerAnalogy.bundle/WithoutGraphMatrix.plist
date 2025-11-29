@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>animationViaProxy</key>
+	<string>bitrateMementoRate</string>
+	<key>descriptorOutsideEnvironment</key>
+	<string>resultStageAlignment</string>
+	<key>gradientTypeSkewx</key>
+	<string>eventKindPosition</string>
+	<key>layoutPhasePosition</key>
+	<string>scaffoldAsFlyweight</string>
+	<key>lostPainterDensity</key>
+	<string>usecaseSingletonAppearance</string>
+	<key>newestThreadPosition</key>
+	<string>euclideanTimerBound</string>
+	<key>originalDependencyOpacity</key>
+	<string>sinkAroundVar</string>
+	<key>tickerLevelDistance</key>
+	<string>storeAroundOperation</string>
+</dict>
+</plist>

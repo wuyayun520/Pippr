@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>concurrentPlateVisibility</key>
+	<string>advancedProjectionColor</string>
+	<key>concurrentSkinMargin</key>
+	<string>otherStoreCenter</string>
+	<key>listenerInEnvironment</key>
+	<string>crudeAllocatorLeft</string>
+	<key>logarithmContainChain</key>
+	<string>alignmentViaChain</string>
+	<key>lostExceptionBound</key>
+	<string>allocatorAboutCycle</string>
+	<key>overlayStructureTag</key>
+	<string>fusedEffectDistance</string>
+	<key>promiseScopeInset</key>
+	<string>ternaryObserverFlags</string>
+	<key>rectFormAcceleration</key>
+	<string>spotLikeSingleton</string>
+</dict>
+</plist>

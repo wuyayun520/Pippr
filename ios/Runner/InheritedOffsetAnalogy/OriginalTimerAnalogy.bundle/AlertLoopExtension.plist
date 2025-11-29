@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>completionWithStyle</key>
+	<string>rapidRowDepth</string>
+	<key>configurationCompositeVelocity</key>
+	<string>dependencyExceptStructure</string>
+	<key>scaleAroundStyle</key>
+	<string>popupOfAction</string>
+	<key>sharedGraphTop</key>
+	<string>usageDespiteState</string>
+	<key>uniformCupertinoBrightness</key>
+	<string>checklistModeRate</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>actionWithStage</key>
+	<string>reductionByLayer</string>
+	<key>anchorPhaseBound</key>
+	<string>symbolAmongAction</string>
+	<key>appbarThroughWork</key>
+	<string>viewAlongLevel</string>
+	<key>mediaqueryOutsideLevel</key>
+	<string>transformerMethodPosition</string>
+	<key>sceneAwayParameter</key>
+	<string>canvasObserverDistance</string>
+</dict>
+</plist>

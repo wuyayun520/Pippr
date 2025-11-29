@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>callbackInterpreterFrequency</key>
+	<string>concurrentIntegerCoord</string>
+	<key>getxSincePattern</key>
+	<string>interactiveSubscriptionTop</string>
+	<key>layoutValueDirection</key>
+	<string>actionMediatorAcceleration</string>
+	<key>temporaryGridScale</key>
+	<string>mediumPainterFeedback</string>
+</dict>
+</plist>

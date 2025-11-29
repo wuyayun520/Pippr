@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>builderUntilComposite</key>
+	<string>statelessMediaCenter</string>
+	<key>difficultNavigationDistance</key>
+	<string>completerAsMode</string>
+	<key>documentParameterMode</key>
+	<string>bulletAwayMemento</string>
+	<key>inkwellFormBehavior</key>
+	<string>concurrentStoryboardInteraction</string>
+	<key>kernelVisitorDelay</key>
+	<string>boxActivityColor</string>
+	<key>methodOrVisitor</key>
+	<string>zoneAsSingleton</string>
+	<key>richtextWithoutAction</key>
+	<string>awaitValueVisible</string>
+	<key>scrollAmongCommand</key>
+	<string>nibByActivity</string>
+</dict>
+</plist>

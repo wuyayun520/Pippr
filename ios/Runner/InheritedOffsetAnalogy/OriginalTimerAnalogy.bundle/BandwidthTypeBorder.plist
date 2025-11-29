@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspectStructureOffset</key>
+	<string>blocProcessType</string>
+	<key>certificatePerVisitor</key>
+	<string>tangentOrChain</string>
+	<key>featureContextBound</key>
+	<string>particleAdapterAppearance</string>
+	<key>mobileMetadataOpacity</key>
+	<string>masterLayerInterval</string>
+	<key>resourceWorkOffset</key>
+	<string>streamAsVariable</string>
+	<key>toolLevelVelocity</key>
+	<string>currentDialogsDensity</string>
+	<key>unactivatedHashLocation</key>
+	<string>graphInsideLayer</string>
+</dict>
+</plist>

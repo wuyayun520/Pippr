@@ -5,6 +5,7 @@ import '../theme/app_theme.dart';
 import '../config/app_routes.dart';
 import '../widgets/background_image_wrapper.dart';
 import '../services/user_profile_service.dart';
+import '../services/vip_service.dart';
 
 class TabThreeScreen extends StatefulWidget {
   const TabThreeScreen({super.key});
@@ -15,7 +16,7 @@ class TabThreeScreen extends StatefulWidget {
 
 class _TabThreeScreenState extends State<TabThreeScreen> {
   String _userName = 'Peter';
-  String _userAvatar = 'assets/AxisBandModel/pippr002/pippr002_avatar.webp';
+  String _userAvatar = 'assets/AxisBandModel/pippr002/user.webp';
   final int _followers = 0;
   final int _likes = 0;
   final int _photos = 0;
@@ -37,6 +38,116 @@ class _TabThreeScreenState extends State<TabThreeScreen> {
   }
 
   Future<void> _showEditDialog() async {
+    // 每次获取用户最新 VIP 状态
+    final isVip = await VipService.isVip();
+    
+    if (!isVip) {
+      // 不是 VIP，提示用户并跳转到 VIP 订阅页面
+      final shouldSubscribe = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'VIP Required',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Editing profile is only available for VIP members.',
+                style: TextStyle(color: Colors.white70),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: AppTheme.primaryColor.withOpacity(0.3),
+                    width: 1,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'VIP Plans:',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Weekly: \$12.99/week',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Monthly: \$49.99/month',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Would you like to subscribe to VIP?',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                'Subscribe',
+                style: TextStyle(color: AppTheme.primaryColor),
+              ),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldSubscribe == true && mounted) {
+        Navigator.of(context).pushNamed(AppRoutes.vip);
+      }
+      return;
+    }
+
+    // 是 VIP，显示编辑对话框
     final TextEditingController nameController = TextEditingController(text: _userName);
     
     await showDialog(
@@ -159,6 +270,116 @@ class _TabThreeScreenState extends State<TabThreeScreen> {
   }
 
   Future<void> _pickAvatar() async {
+    // 每次获取用户最新 VIP 状态
+    final isVip = await VipService.isVip();
+    
+    if (!isVip) {
+      // 不是 VIP，提示用户并跳转到 VIP 订阅页面
+      final shouldSubscribe = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'VIP Required',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Changing avatar is only available for VIP members.',
+                style: TextStyle(color: Colors.white70),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: AppTheme.primaryColor.withOpacity(0.3),
+                    width: 1,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'VIP Plans:',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Weekly: \$12.99/week',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Monthly: \$49.99/month',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Would you like to subscribe to VIP?',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                'Subscribe',
+                style: TextStyle(color: AppTheme.primaryColor),
+              ),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldSubscribe == true && mounted) {
+        Navigator.of(context).pushNamed(AppRoutes.vip);
+      }
+      return;
+    }
+
+    // 是 VIP，允许选择头像
     try {
       final XFile? picked = await _imagePicker.pickImage(
         source: ImageSource.gallery,
@@ -223,6 +444,8 @@ class _TabThreeScreenState extends State<TabThreeScreen> {
                 const SizedBox(height: 30),
                 _buildStatsSection(),
                 const SizedBox(height: 30),
+                _buildImageButtons(),
+                const SizedBox(height: 16),
                 _buildMenuItems(),
               ],
             ),
@@ -296,12 +519,16 @@ class _TabThreeScreenState extends State<TabThreeScreen> {
               children: [
                 Row(
                   children: [
-                    Text(
-                      _userName,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    Flexible(
+                      child: Text(
+                        _userName,
+                        style: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     ),
                     const SizedBox(width: 12),
@@ -401,6 +628,104 @@ class _TabThreeScreenState extends State<TabThreeScreen> {
       width: 1,
       height: 40,
       color: Colors.white.withOpacity(0.1),
+    );
+  }
+
+  Widget _buildImageButtons() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          _buildImageButton(
+            imagePath: 'assets/pippr_me_vip.webp',
+            title: '',
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.vip);
+            },
+          ),
+          const SizedBox(height: 12),
+          _buildImageButton(
+            imagePath: 'assets/pippr_me_wallet.webp',
+            title: '',
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.wallet);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildImageButton({
+    required String imagePath,
+    required String title,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 60,
+       
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ClipRRect(
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: title == 'VIP'
+                            ? [
+                                const Color(0xFF5DADE2),
+                                const Color(0xFF9C7CF4),
+                              ]
+                            : [
+                                const Color(0xFF46FB6D),
+                                const Color(0xFF9C7CF4),
+                              ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

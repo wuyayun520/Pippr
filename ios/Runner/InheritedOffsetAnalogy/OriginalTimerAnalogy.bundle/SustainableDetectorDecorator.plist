@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>borderSystemOrigin</key>
+	<string>builderOutsideStage</string>
+	<key>concreteRadiusSpeed</key>
+	<string>nibFlyweightDelay</string>
+	<key>managerInParameter</key>
+	<string>resultParameterTint</string>
+	<key>projectCycleHue</key>
+	<string>alignmentAroundStage</string>
+	<key>rectContainEnvironment</key>
+	<string>providerTypeVisible</string>
+	<key>singletonAmongNumber</key>
+	<string>popupCommandCenter</string>
+	<key>switchCompositeContrast</key>
+	<string>layerNumberScale</string>
+	<key>transformerForEnvironment</key>
+	<string>queueAroundComposite</string>
+</dict>
+</plist>

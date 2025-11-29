@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>consultativeEffectDelay</key>
+	<string>factoryAboutAction</string>
+	<key>containerDespiteOperation</key>
+	<string>mainCapsuleSkewy</string>
+	<key>explicitResourceAlignment</key>
+	<string>draggableEffectTransparency</string>
+	<key>mutableDescriptionState</key>
+	<string>decorationThroughBridge</string>
+	<key>observerExceptProxy</key>
+	<string>streamShapeBehavior</string>
+	<key>textureVarContrast</key>
+	<string>smartMapCount</string>
+</dict>
+</plist>

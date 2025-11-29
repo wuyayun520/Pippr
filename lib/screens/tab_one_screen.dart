@@ -3,6 +3,11 @@ import '../widgets/background_image_wrapper.dart';
 import '../models/talent_model.dart';
 import '../services/talent_service.dart';
 import '../services/block_service.dart';
+import '../services/coin_service.dart';
+import '../services/unlock_service.dart';
+import '../services/vip_service.dart';
+import '../config/app_routes.dart';
+import '../theme/app_theme.dart';
 import 'user_detail_screen.dart';
 
 class TabOneScreen extends StatefulWidget {
@@ -113,13 +118,7 @@ class _TabOneScreenState extends State<TabOneScreen> {
 
   Widget _buildArtistAvatar(TalentModel artist) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => UserDetailScreen(talent: artist),
-          ),
-        );
-      },
+      onTap: () => _handleArtistCardTap(artist),
       child: Container(
         width: 64,
         height: 64,
@@ -163,6 +162,268 @@ class _TabOneScreenState extends State<TabOneScreen> {
     );
   }
 
+  Future<void> _handleArtistCardTap(TalentModel artist) async {
+    // 检查用户是否已解锁
+    final isUnlocked = await UnlockService.isUnlocked(artist.id);
+    
+    if (isUnlocked) {
+      // 已解锁，直接跳转
+      if (mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => UserDetailScreen(talent: artist),
+          ),
+        );
+      }
+      return;
+    }
+
+    // 未解锁，检查金币余额
+    final coins = await CoinService.getCoins();
+    final unlockCost = CoinService.unlockCost;
+    final hasEnoughCoins = coins >= unlockCost;
+
+    if (!hasEnoughCoins) {
+      // 金币不足，提示用户并跳转到钱包页面
+      final shouldRecharge = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'Insufficient Coins',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Text(
+            'You need $unlockCost coins to unlock this user. Your current balance is $coins coins.\n\nWould you like to recharge?',
+            style: const TextStyle(color: Colors.white70),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                'Recharge',
+                style: TextStyle(color: AppTheme.primaryColor),
+              ),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldRecharge == true && mounted) {
+        Navigator.of(context).pushNamed(AppRoutes.wallet);
+      }
+      return;
+    }
+
+    // 金币足够，确认是否解锁
+    final shouldUnlock = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: const Text(
+          'Unlock User',
+          style: TextStyle(color: Colors.white),
+        ),
+        content: Text(
+          'Unlocking this user will cost $unlockCost coins.\n\nYour current balance: $coins coins\nAfter unlock: ${coins - unlockCost} coins\n\nDo you want to continue?',
+          style: const TextStyle(color: Colors.white70),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white70),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(
+              'Unlock',
+              style: TextStyle(color: AppTheme.primaryColor),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldUnlock == true) {
+      // 扣除金币并解锁用户
+      final success = await CoinService.deductCoins(unlockCost);
+      
+      if (success) {
+        await UnlockService.unlockUser(artist.id);
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('User unlocked! -$unlockCost coins'),
+              backgroundColor: AppTheme.primaryColor,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          );
+          
+          // 跳转到详情页面
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => UserDetailScreen(talent: artist),
+            ),
+          );
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Failed to unlock user. Please try again.'),
+              backgroundColor: Colors.red,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              ),
+            ),
+          );
+        }
+      }
+    }
+  }
+
+  Future<void> _handleDynamicCardTap() async {
+    // 每次获取用户最新 VIP 状态
+    final isVip = await VipService.isVip();
+    
+    if (isVip) {
+      // 是 VIP，直接跳转
+      if (mounted) {
+        Navigator.of(context).pushNamed('/dynamic-list');
+      }
+      return;
+    }
+
+    // 不是 VIP，提示用户并跳转到 VIP 订阅页面
+    final shouldSubscribe = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: const Text(
+          'VIP Required',
+          style: TextStyle(color: Colors.white),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'This feature is only available for VIP members.',
+              style: TextStyle(color: Colors.white70),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppTheme.primaryColor.withOpacity(0.3),
+                  width: 1,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'VIP Plans:',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Weekly: \$12.99/week',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.8),
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Monthly: \$49.99/month',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.8),
+                                fontSize: 13,
+                              ),
+                            ),
+                            
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Would you like to subscribe to VIP?',
+              style: TextStyle(color: Colors.white70),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white70),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(
+              'Subscribe',
+              style: TextStyle(color: AppTheme.primaryColor),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldSubscribe == true && mounted) {
+      Navigator.of(context).pushNamed(AppRoutes.vip);
+    }
+  }
+
   Widget _buildCardsSection() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -178,9 +439,7 @@ class _TabOneScreenState extends State<TabOneScreen> {
 
   Widget _buildDynamicCard() {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed('/dynamic-list');
-      },
+      onTap: () => _handleDynamicCardTap(),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24),
         child: Image.asset(

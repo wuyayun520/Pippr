@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>delegateForNumber</key>
+	<string>aspectAmongFacade</string>
+	<key>methodBeyondProxy</key>
+	<string>commandOrStyle</string>
+	<key>movementBesideNumber</key>
+	<string>projectTaskRight</string>
+	<key>synchronousStreamSaturation</key>
+	<string>labelWorkShape</string>
+</dict>
+</plist>

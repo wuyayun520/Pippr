@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>blocBeyondFramework</key>
+	<string>synchronousChartOrigin</string>
+	<key>effectLevelMargin</key>
+	<string>unsortedChannelSaturation</string>
+	<key>lazyMapEdge</key>
+	<string>reducerOrVar</string>
+	<key>requiredPlaybackAcceleration</key>
+	<string>requiredExpandedHead</string>
+	<key>tangentPrototypeDistance</key>
+	<string>buttonAlongParameter</string>
+</dict>
+</plist>

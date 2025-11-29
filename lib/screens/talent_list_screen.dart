@@ -4,6 +4,10 @@ import '../models/talent_model.dart';
 import '../services/talent_service.dart';
 import '../services/follow_service.dart';
 import '../services/block_service.dart';
+import '../services/coin_service.dart';
+import '../services/unlock_service.dart';
+import '../config/app_routes.dart';
+import '../theme/app_theme.dart';
 import 'user_detail_screen.dart';
 
 class TalentListScreen extends StatefulWidget {
@@ -207,13 +211,7 @@ class _TalentListScreenState extends State<TalentListScreen> {
 
   Widget _buildTalentCard(TalentModel talent) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => UserDetailScreen(talent: talent),
-          ),
-        );
-      },
+      onTap: () => _handleTalentCardTap(talent),
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),
         height: 280,
@@ -301,6 +299,147 @@ class _TalentListScreenState extends State<TalentListScreen> {
     setState(() {
       _followedMap[talent.id] = !(_followedMap[talent.id] ?? false);
     });
+  }
+
+  Future<void> _handleTalentCardTap(TalentModel talent) async {
+    // 检查用户是否已解锁
+    final isUnlocked = await UnlockService.isUnlocked(talent.id);
+    
+    if (isUnlocked) {
+      // 已解锁，直接跳转
+      if (mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => UserDetailScreen(talent: talent),
+          ),
+        );
+      }
+      return;
+    }
+
+    // 未解锁，检查金币余额
+    final coins = await CoinService.getCoins();
+    final unlockCost = CoinService.unlockCost;
+    final hasEnoughCoins = coins >= unlockCost;
+
+    if (!hasEnoughCoins) {
+      // 金币不足，提示用户并跳转到钱包页面
+      final shouldRecharge = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'Insufficient Coins',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Text(
+            'You need $unlockCost coins to unlock this user. Your current balance is $coins coins.\n\nWould you like to recharge?',
+            style: const TextStyle(color: Colors.white70),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                'Recharge',
+                style: TextStyle(color: AppTheme.primaryColor),
+              ),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldRecharge == true && mounted) {
+        Navigator.of(context).pushNamed(AppRoutes.wallet);
+      }
+      return;
+    }
+
+    // 金币足够，确认是否解锁
+    final shouldUnlock = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey[900]!.withOpacity(0.95),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: const Text(
+          'Unlock User',
+          style: TextStyle(color: Colors.white),
+        ),
+        content: Text(
+          'Unlocking this user will cost $unlockCost coins.\n\nYour current balance: $coins coins\nAfter unlock: ${coins - unlockCost} coins\n\nDo you want to continue?',
+          style: const TextStyle(color: Colors.white70),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white70),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(
+              'Unlock',
+              style: TextStyle(color: AppTheme.primaryColor),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldUnlock == true) {
+      // 扣除金币并解锁用户
+      final success = await CoinService.deductCoins(unlockCost);
+      
+      if (success) {
+        await UnlockService.unlockUser(talent.id);
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('User unlocked! -$unlockCost coins'),
+              backgroundColor: AppTheme.primaryColor,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          );
+          
+          // 跳转到详情页面
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => UserDetailScreen(talent: talent),
+            ),
+          );
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Failed to unlock user. Please try again.'),
+              backgroundColor: Colors.red,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              ),
+            ),
+          );
+        }
+      }
+    }
   }
 
   List<String> _getTalentTags(String talentType) {

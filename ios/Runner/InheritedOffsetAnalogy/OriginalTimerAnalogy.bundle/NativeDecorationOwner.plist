@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>activatedPositionMargin</key>
+	<string>sliderProxySpacing</string>
+	<key>checklistVarFrequency</key>
+	<string>imperativeProgressbarBorder</string>
+	<key>commandActivitySaturation</key>
+	<string>viewAlongSingleton</string>
+	<key>protectedUnaryContrast</key>
+	<string>smallIndicatorColor</string>
+	<key>rapidStackName</key>
+	<string>usageChainShade</string>
+	<key>resilientButtonSkewx</key>
+	<string>cartesianLabelTheme</string>
+	<key>serviceActivityEdge</key>
+	<string>metadataObserverDirection</string>
+	<key>statefulDrawerScale</key>
+	<string>statefulLayoutSkewx</string>
+</dict>
+</plist>

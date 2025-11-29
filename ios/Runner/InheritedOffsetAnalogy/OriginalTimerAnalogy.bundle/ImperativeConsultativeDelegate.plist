@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>blocCompositeAcceleration</key>
+	<string>arithmeticFrameValidation</string>
+	<key>canvasAboutBuffer</key>
+	<string>sharedServiceRate</string>
+	<key>cupertinoMaterialTop</key>
+	<string>threadCompositeStyle</string>
+	<key>layoutOrState</key>
+	<string>mediaValueShade</string>
+	<key>modelFlyweightType</key>
+	<string>notificationThroughFlyweight</string>
+	<key>opaqueContainerDistance</key>
+	<string>baselineOutsideValue</string>
+	<key>painterViaForm</key>
+	<string>immutableQueuePadding</string>
+	<key>scrollPrototypeBrightness</key>
+	<string>parallelMetadataContrast</string>
+	<key>sortedNibStyle</key>
+	<string>sizedboxViaEnvironment</string>
+	<key>transitionAsPhase</key>
+	<string>flexAndSingleton</string>
+</dict>
+</plist>

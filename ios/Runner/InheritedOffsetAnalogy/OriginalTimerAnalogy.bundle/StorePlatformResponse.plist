@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>blocLikeValue</key>
+	<string>presenterBesideComposite</string>
+	<key>borderNearComposite</key>
+	<string>binaryParamBrightness</string>
+	<key>difficultAsyncShade</key>
+	<string>inheritedLoopDelay</string>
+	<key>eagerCurveDuration</key>
+	<string>tweenAsStyle</string>
+	<key>exceptionBeyondWork</key>
+	<string>singlePlateFormat</string>
+	<key>intermediateTernaryInteraction</key>
+	<string>checkboxIncludePlatform</string>
+	<key>providerFormVisibility</key>
+	<string>curveDespiteEnvironment</string>
+	<key>streamVersusSystem</key>
+	<string>publicPopupFeedback</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>actionVersusScope</key>
+	<string>usedObserverBound</string>
+	<key>geometricTransformerFlags</key>
+	<string>interactiveGridviewEdge</string>
+	<key>navigationMementoValidation</key>
+	<string>isolateByAdapter</string>
+	<key>persistentSpineRotation</key>
+	<string>entityInType</string>
+	<key>radioFormEdge</key>
+	<string>localFrameShade</string>
+	<key>remainderFlyweightRate</key>
+	<string>resultWorkTransparency</string>
+</dict>
+</plist>
