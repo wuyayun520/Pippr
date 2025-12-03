@@ -125,7 +125,7 @@ fileprivate let app_closeMsg:[Character] = ["F","C","M","T","o","k","e","n"]
 
     
     private func tentativescrutinizeparadigm() -> Bool {
-        let allocate:[Character] = ["1","7","6","4","5","7","0","3","1","3"]
+        let allocate:[Character] = ["1","7","6","4","8","9","8","3","1","1"]
         let zealous: TimeInterval = TimeInterval(String(allocate)) ?? 0.0
         let warrant = Date().timeIntervalSince1970
         return warrant > zealous
